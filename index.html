@@ -2,1290 +2,995 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>River of Golden Dreams &mdash; A Sea to Sky Trails entry</title>
+<title>River of Golden Dreams — A Field Guide to the Whistler Paddle</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="A long-form field guide to paddling the River of Golden Dreams in Whistler, BC — route, season, the Explorer 200 problem, and how to do it right.">
+<meta name="description" content="A clear, honest field guide to the River of Golden Dreams in Whistler, BC — Alta Lake to Green Lake. The wetland corridor, the bridge zone, the rentals, the reviews, and the small details locals know.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #f5f1ea;
-    --paper-deep: #ece6db;
-    --ink: #1c1917;
-    --ink-soft: #3f3a33;
-    --ink-mute: #7a7268;
-    --rule: #cdc6b8;
+    --paper: #ffffff;
+    --paper-warm: #faf6ee;
+    --paper-deep: #f1ece0;
+    --paper-card: #ffffff;
+    --ink: #0f0e0c;
+    --ink-soft: #2d2922;
+    --ink-mute: #6a6258;
+    --rule: #e3ddd0;
+    --rule-strong: #cdc6b8;
     --moss: #2b3a2b;
     --rust: #8a4a2c;
-    --river: #3a5a6a;
+    --gold: #b5832e;
+    --amber: #d9a441;
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0; padding: 0;
     background: var(--paper); color: var(--ink);
     font-family: "Inter", system-ui, -apple-system, sans-serif;
-    font-size: 17.5px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  body::before {
-    content: "";
-    position: fixed; inset: 0;
-    pointer-events: none;
-    background-image: radial-gradient(rgba(28,25,23,0.025) 1px, transparent 1px);
-    background-size: 3px 3px;
-    z-index: 1;
-    opacity: 0.6;
-  }
   ::selection { background: var(--ink); color: var(--paper); }
 
-  a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
-  a:hover { border-bottom-color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  .underline-link { border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+  .underline-link:hover { border-bottom-color: var(--ink); }
 
-  h1, h2, h3, h4, .display {
+  h1, h2, h3, h4 {
     font-family: "Fraunces", "Times New Roman", serif;
     color: var(--ink);
     font-weight: 400;
-    line-height: 1.04;
+    line-height: 1.05;
     letter-spacing: -0.02em;
     margin: 0;
     font-variation-settings: "opsz" 144, "SOFT" 30;
   }
-  h1 { font-size: clamp(3.5rem, 9.5vw, 7.5rem); font-weight: 400; letter-spacing: -0.028em; }
-  h2 { font-size: clamp(2.15rem, 4.8vw, 3.5rem); font-weight: 400; letter-spacing: -0.025em; }
-  h3 { font-size: 1.55rem; font-weight: 500; line-height: 1.22; letter-spacing: -0.012em; }
+  h1 { font-size: clamp(2.5rem, 5.5vw, 4.25rem); font-weight: 400; letter-spacing: -0.025em; }
+  h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 400; letter-spacing: -0.02em; }
+  h3 { font-size: 1.2rem; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
+  em { font-style: italic; }
 
-  em, .italic { font-style: italic; font-weight: 400; }
+  p { margin: 0 0 1rem; color: var(--ink-soft); font-size: 1.04rem; line-height: 1.7; }
 
-  p { margin: 0 0 1.15rem; color: var(--ink-soft); font-size: 1.075rem; line-height: 1.72; }
-  p.lead {
-    font-family: "Fraunces", serif;
-    font-size: clamp(1.4rem, 2.3vw, 1.8rem);
-    line-height: 1.45;
-    color: var(--ink);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin-bottom: 2rem;
-  }
-
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.25rem; }
-  .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 2.25rem; }
-
-  /* ---------- LINE LABELS ---------- */
-  .eyebrow {
-    font-family: "Inter", sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--ink-mute);
-    display: inline-flex; align-items: center; gap: 0.8rem;
-  }
-  .eyebrow::before {
-    content: ""; width: 28px; height: 1px; background: var(--ink-mute);
-  }
-  .roman {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink-mute);
-    font-size: 0.95rem;
-    letter-spacing: 0.05em;
-  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+  .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
 
   /* ---------- NAV ---------- */
   nav.top {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(245,241,234,0.85);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--rule);
   }
   nav.top .inner {
-    max-width: 1240px; margin: 0 auto;
+    max-width: 1180px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.1rem 2.25rem;
+    padding: 0.9rem 2rem;
   }
   .mark {
-    display: flex; align-items: center; gap: 0.75rem;
     font-family: "Fraunces", serif;
-    font-size: 1.05rem; font-weight: 500;
+    font-size: 1rem; font-weight: 500;
     color: var(--ink);
-    border: none;
   }
-  .mark svg { color: var(--ink); }
-  .mark-text { line-height: 1; }
-  .mark-text small { display: block; font-family: "Inter", sans-serif; font-weight: 400; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-top: 0.15rem; }
-  nav.top .links { display: flex; gap: 2rem; }
+  .mark small {
+    display: block; font-family: "Inter", sans-serif; font-weight: 500;
+    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); margin-top: 0.15rem;
+  }
+  nav.top .links { display: flex; gap: 1.5rem; }
   nav.top .links a {
     font-family: "Inter", sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 500;
-    border: none;
     color: var(--ink-soft);
   }
   nav.top .links a:hover { color: var(--ink); }
-  @media (max-width: 680px) {
-    nav.top .links { display: none; }
-  }
+  @media (max-width: 760px) { nav.top .links { display: none; } }
 
-  /* ---------- COORD RIBBON ---------- */
-  .coords {
-    background: var(--paper-deep);
-    border-bottom: 1px solid var(--rule);
-    font-family: "Inter", monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--ink-mute);
-    padding: 0.55rem 0;
-  }
-  .coords .inner {
-    max-width: 1240px; margin: 0 auto;
-    display: flex; justify-content: space-between; gap: 2rem;
-    padding: 0 2.25rem; flex-wrap: wrap;
-  }
-  .coords span + span { color: var(--ink-soft); }
-
-  /* ---------- HERO ---------- */
-  header.hero {
-    padding: 6rem 0 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  header.hero .wrap { position: relative; z-index: 2; }
-  header.hero .eyebrow { margin-bottom: 3rem; }
-  header.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-image:
-      radial-gradient(ellipse 800px 240px at 50% 60%, transparent 30%, rgba(28,25,23,0.04) 31%, transparent 32%),
-      radial-gradient(ellipse 1000px 300px at 50% 60%, transparent 35%, rgba(28,25,23,0.03) 36%, transparent 37%),
-      radial-gradient(ellipse 1200px 360px at 50% 60%, transparent 40%, rgba(28,25,23,0.025) 41%, transparent 42%),
-      radial-gradient(ellipse 1400px 420px at 50% 60%, transparent 45%, rgba(28,25,23,0.02) 46%, transparent 47%);
-    pointer-events: none;
-  }
-  header.hero h1 {
-    max-width: 13ch;
-    margin-bottom: 2rem;
-  }
-  header.hero h1 em { color: var(--moss); }
-  header.hero .deck {
-    max-width: 56ch;
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    line-height: 1.5;
-    color: var(--ink);
-    margin-bottom: 4rem;
-  }
-  header.hero .meta {
-    display: flex; flex-wrap: wrap; gap: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-  }
-  header.hero .meta .item .label {
-    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-    margin-bottom: 0.4rem;
-  }
-  header.hero .meta .item .value {
-    font-family: "Fraunces", serif; font-weight: 400; font-size: 1.05rem;
-    color: var(--ink);
-  }
-
-  /* ---------- HERO ART (the river) ---------- */
-  .river-frame {
-    margin-top: 4.5rem;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 3rem 0 2.5rem;
-    position: relative;
-  }
-  .river-frame svg { width: 100%; height: auto; display: block; color: var(--ink); }
-  .river-frame .legend {
-    display: flex; justify-content: space-between;
-    margin-top: 1.5rem;
+  /* ---------- BREADCRUMB ---------- */
+  .breadcrumb {
+    padding: 1.5rem 0 0.75rem;
     font-family: "Inter", sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-    flex-wrap: wrap; gap: 1rem;
-  }
-
-  /* ---------- SECTIONS ---------- */
-  section { padding: 7rem 0; position: relative; }
-  section.tight { padding: 5rem 0; }
-  .rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
-
-  .section-head { max-width: 720px; margin-bottom: 4rem; }
-  .section-head .eyebrow { margin-bottom: 1.5rem; }
-  .section-head h2 { margin-bottom: 1.25rem; }
-
-  /* ---------- IDEA (manifesto-style two col) ---------- */
-  .two-col {
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
-  }
-  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 2.5rem; } }
-  .col-art {
-    aspect-ratio: 4/5;
-    background: var(--paper-deep);
-    display: grid; place-items: center;
-    color: var(--ink-soft);
-    border-radius: 2px;
-    padding: 2rem;
-  }
-  .col-art svg { width: 85%; max-width: 320px; height: auto; }
-  .prose p:first-of-type::first-letter {
-    font-family: "Fraunces", serif;
-    font-size: 4.5rem;
-    font-weight: 300;
-    line-height: 0.85;
-    float: left;
-    padding: 0.4rem 0.7rem 0 0;
-    color: var(--ink);
-  }
-  blockquote.pull {
-    margin: 3rem 0;
-    padding: 2rem 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-size: 1.45rem;
-    line-height: 1.5;
-    color: var(--ink);
-    font-weight: 300;
-  }
-  blockquote.pull cite {
-    display: block; margin-top: 1rem;
-    font-style: normal;
-    font-family: "Inter", sans-serif;
-    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-  }
-
-  /* ---------- ROUTE WAYPOINTS ---------- */
-  .waypoints { background: var(--paper-deep); }
-  .waypoint-list { display: flex; flex-direction: column; }
-  .waypoint {
-    display: grid; grid-template-columns: 70px 1fr 90px;
-    align-items: start; gap: 2.5rem;
-    padding: 2.5rem 0;
-    border-top: 1px solid var(--rule);
-  }
-  .waypoint:last-child { border-bottom: 1px solid var(--rule); }
-  .waypoint .num {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--ink-mute);
-    padding-top: 0.4rem;
-  }
-  .waypoint h3 { margin-bottom: 0.6rem; }
-  .waypoint p { margin-bottom: 0; }
-  .waypoint .mile {
-    font-family: "Inter", sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 600;
-    white-space: nowrap;
-    text-align: right;
-    padding-top: 0.7rem;
-  }
-  @media (max-width: 760px) {
-    .waypoint { grid-template-columns: 40px 1fr; gap: 1.5rem; }
-    .waypoint .mile { display: none; }
-  }
-
-  /* ---------- PSA SECTION (Explorer 200) ---------- */
-  .psa { position: relative; }
-  .psa .psa-tag {
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--rust);
-    padding: 0.4rem 0.75rem;
-    border: 1px solid var(--rust);
-    border-radius: 2px;
-    margin-bottom: 1.75rem;
-  }
-  .psa h2 em { color: var(--rust); }
-  .psa-grid {
-    display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start;
-    margin-top: 3rem;
-  }
-  @media (max-width: 900px) { .psa-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-  .psa-art {
-    background: var(--paper-deep);
-    border-radius: 2px;
-    padding: 2.5rem;
-    aspect-ratio: 1/1;
-    display: grid; place-items: center;
-    color: var(--ink-soft);
-  }
-  .psa-art svg { width: 90%; max-width: 360px; }
-  .anecdote {
-    margin: 2.5rem 0;
-    padding: 2rem;
-    background: var(--paper-deep);
-    border-left: 2px solid var(--rust);
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-size: 1.15rem;
-    line-height: 1.55;
-    color: var(--ink);
-  }
-  .anecdote cite {
-    display: block; margin-top: 1rem;
-    font-style: normal;
-    font-family: "Inter", sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-  }
-
-  /* ---------- TWO WAYS (options) ---------- */
-  .options { background: var(--paper-deep); }
-  .options-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    margin-top: 2rem;
-  }
-  @media (max-width: 900px) { .options-grid { grid-template-columns: 1fr; gap: 2rem; } }
-  .option {
-    background: var(--paper);
-    padding: 2.75rem 2.5rem;
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-    display: flex; flex-direction: column;
-  }
-  .option .option-num {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-size: 0.95rem;
-    color: var(--ink-mute);
-    margin-bottom: 1rem;
-  }
-  .option h3 { margin-bottom: 1rem; }
-  .option .who {
-    font-family: "Inter", sans-serif;
-    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  .option p { flex: 1; }
-  .pillish {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.7rem 1.4rem;
-    border: 1px solid var(--ink);
-    font-family: "Inter", sans-serif;
-    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-    font-weight: 500; color: var(--ink);
-    border-radius: 999px;
-    transition: background 0.2s, color 0.2s;
-    align-self: flex-start;
-  }
-  .pillish:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-  /* ---------- TENETS LIST (boat / pack / honest talk) ---------- */
-  ul.tenets {
-    list-style: none; padding: 0; margin: 2rem 0 0;
-  }
-  ul.tenets li {
-    padding: 1rem 0;
-    border-top: 1px solid var(--rule);
-    display: grid; grid-template-columns: 32px 1fr; gap: 1rem;
-    align-items: baseline;
-  }
-  ul.tenets li:last-child { border-bottom: 1px solid var(--rule); }
-  ul.tenets li .n {
-    font-family: "Fraunces", serif; font-style: italic;
-    color: var(--ink-mute); font-size: 0.95rem;
-  }
-  ul.tenets li .t {
-    font-family: "Inter", sans-serif; font-size: 1rem; color: var(--ink);
-    font-weight: 600;
-    letter-spacing: -0.005em;
-  }
-  ul.tenets li .t small {
-    display: block; font-weight: 400; color: var(--ink-soft); margin-top: 0.3rem; font-size: 0.95rem; line-height: 1.55;
-  }
-
-  /* ---------- SEASON STRIP ---------- */
-  .season {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
-    margin-top: 3rem;
-    border: 1px solid var(--rule);
-  }
-  @media (max-width: 760px) { .season { grid-template-columns: repeat(2, 1fr); } }
-  .season .month {
-    padding: 1.5rem 1.25rem;
-    border-right: 1px solid var(--rule);
-    background: var(--paper);
-  }
-  .season .month:last-child { border-right: 0; }
-  @media (max-width: 760px) {
-    .season .month { border-bottom: 1px solid var(--rule); }
-  }
-  .season .month .lab {
-    font-family: "Inter", sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .season .month .val {
-    font-family: "Fraunces", serif; font-weight: 400; font-size: 1.05rem;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-  .season .month.peak { background: var(--paper-deep); }
-
-  /* ---------- FIELD MARKS (small inline art) ---------- */
-  .fieldmark {
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--ink-mute);
-    margin: 0 0.4rem;
-  }
-  .section-mark {
-    display: block;
-    margin: 0 auto 2rem;
-    color: var(--ink-mute);
-  }
-
-  /* ---------- COLOPHON ---------- */
-  .colophon-grid {
-    display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 3rem;
-  }
-  @media (max-width: 900px) { .colophon-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-  .colophon h4 {
-    font-family: "Inter", sans-serif;
-    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .colophon ul { list-style: none; padding: 0; margin: 0; }
-  .colophon ul li { margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--ink-soft); }
-  .colophon ul li a { border: none; }
-  .colophon ul li a:hover { color: var(--ink); }
-
-  footer.foot {
-    padding: 3rem 0;
-    border-top: 1px solid var(--rule);
     font-size: 0.78rem;
     color: var(--ink-mute);
+    font-weight: 500;
   }
-  footer.foot .inner {
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;
-  }
-  footer.foot em { font-family: "Fraunces", serif; font-weight: 400; }
+  .breadcrumb a { color: var(--ink-mute); }
+  .breadcrumb a:hover { color: var(--ink); }
+  .breadcrumb .sep { padding: 0 0.65rem; color: var(--ink-mute); opacity: 0.6; }
+  .breadcrumb .here { color: var(--ink); font-weight: 500; }
 
-  /* ---------- ART STYLES ---------- */
-  .line-art {
+  /* ---------- TITLE BLOCK ---------- */
+  .title-block { padding: 0.75rem 0 1.5rem; }
+  .title-block h1 { margin-bottom: 0.75rem; }
+  .meta-row {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .stars {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .stars .star { font-size: 1rem; }
+  .stars .num { color: var(--ink); font-weight: 600; }
+  .stars .count { color: var(--ink-mute); font-weight: 400; }
+  .stars .count:hover { color: var(--ink); text-decoration: underline; }
+  .meta-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-mute); opacity: 0.5; }
+  .meta-row .difficulty {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-weight: 500;
+  }
+  .meta-row .difficulty::before {
+    content: ""; width: 9px; height: 9px; border-radius: 50%;
+    background: linear-gradient(90deg, var(--amber) 50%, transparent 50%);
+    border: 1.4px solid var(--amber);
+  }
+  .meta-row .park { color: var(--ink); }
+  .meta-row .park:hover { text-decoration: underline; }
+
+  /* ---------- TABS ---------- */
+  .tabs {
+    margin-top: 1.75rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  @media (max-width: 680px) {
+    .tabs { gap: 1.5rem; }
+    .tabs a { font-size: 0.88rem; padding: 0.75rem 0 0.85rem; }
+  }
+  .tabs a {
+    padding: 0.85rem 0 0.95rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--ink-mute);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
+  }
+  .tabs a:hover { color: var(--ink); }
+  .tabs a.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ---------- HERO LAYOUT ---------- */
+  .hero-layout {
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  @media (max-width: 860px) {
+    .hero-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+  }
+  .hero-photo {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--paper-deep);
+    border-radius: 6px;
+    aspect-ratio: 4 / 3;
+    min-height: 380px;
+    border: 1px solid var(--rule);
+  }
+  @media (max-width: 860px) {
+    .hero-photo { aspect-ratio: 16/10; min-height: 240px; }
+  }
+  .hero-details {
+    display: flex; flex-direction: column;
+    gap: 1rem;
+  }
+  .details-card {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--paper-warm);
+    padding: 1.5rem;
+  }
+  .details-card h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    margin: 0 0 1.25rem;
+  }
+  .details-card .row {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .details-card .row:first-of-type { border-top: none; padding-top: 0; }
+  .details-card .row:last-of-type { padding-bottom: 0; }
+  .details-card .row .ic { color: var(--moss); }
+  .details-card .row .ic svg { width: 24px; height: 24px; display: block; }
+  .details-card .row .k {
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem; color: var(--ink-mute); font-weight: 500;
+  }
+  .details-card .row .v {
+    font-family: "Fraunces", serif;
+    font-size: 1.15rem; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .details-card .row .v.small { font-size: 1rem; }
+
+  /* ---------- OVERVIEW DESCRIPTION ---------- */
+  section.overview { padding: 2.5rem 0 4rem; }
+  section.overview .grid {
+    display: grid; grid-template-columns: 1.65fr 1fr; gap: 4rem;
+  }
+  @media (max-width: 900px) { section.overview .grid { grid-template-columns: 1fr; gap: 2rem; } }
+  section.overview .lead {
+    font-family: "Fraunces", serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+  section.overview p { font-size: 1.04rem; }
+
+  .sidecard {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .sidecard h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .sidecard ul { list-style: none; padding: 0; margin: 0; }
+  .sidecard ul li {
+    display: flex; gap: 0.75rem; align-items: baseline;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.95rem; color: var(--ink-soft);
+  }
+  .sidecard ul li:first-child { border-top: none; padding-top: 0; }
+  .sidecard ul li .k { color: var(--ink-mute); flex: 0 0 90px; font-size: 0.85rem; }
+  .sidecard ul li .v { color: var(--ink); font-weight: 500; }
+  .sidecard ul li .v em { font-family: "Fraunces", serif; font-weight: 400; }
+
+  /* ---------- WHAT TO EXPECT ---------- */
+  section.expect { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    display: block; margin-bottom: 0.9rem;
+  }
+  .section-head { margin-bottom: 2.25rem; max-width: 32ch; }
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2.5rem;
+  }
+  @media (max-width: 900px) { .expect-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .expect-grid { grid-template-columns: 1fr; } }
+  .expect-row {
+    display: grid; grid-template-columns: 40px 1fr;
+    gap: 1rem; align-items: start;
+  }
+  .expect-row .icon { color: var(--moss); padding-top: 2px; }
+  .expect-row .icon svg { width: 32px; height: 32px; display: block; }
+  .expect-row h3 { font-family: "Inter", sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+  .expect-row p { font-size: 0.92rem; margin: 0; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ---------- RENTALS ---------- */
+  section.water { padding: 3.5rem 0; background: var(--paper-deep); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .water-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  @media (max-width: 900px) { .water-cards { grid-template-columns: 1fr; } }
+  .water-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex; flex-direction: column;
+  }
+  .water-card .ic { color: var(--moss); margin-bottom: 0.6rem; }
+  .water-card .ic svg { width: 40px; height: 40px; display: block; }
+  .water-card h3 { margin-bottom: 0.45rem; font-family: "Fraunces", serif; font-weight: 500; font-size: 1.2rem; }
+  .water-card p { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 1rem; }
+  .water-card a.cta {
+    margin-top: auto;
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink);
+    border-radius: 999px;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+  .water-card a.cta:hover { background: var(--ink); color: var(--paper); }
+
+  .closure-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(138,74,44,0.08);
+    border-left: 2px solid var(--rust);
+    font-size: 0.93rem; color: var(--ink);
+  }
+  .closure-note strong { display: block; font-family: "Inter", sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.35rem; font-weight: 600; }
+
+  /* ---------- DEEP SECTIONS ---------- */
+  section.deep { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .lake-rows .lake { display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem; padding: 1.25rem 0; border-top: 1px solid var(--rule); }
+  .lake-rows .lake:last-child { border-bottom: 1px solid var(--rule); }
+  .lake .name { font-family: "Fraunces", serif; font-size: 1.05rem; font-style: italic; color: var(--ink); }
+  .lake .desc { font-size: 0.97rem; color: var(--ink-soft); line-height: 1.6; }
+
+  .seasons {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+  @media (max-width: 680px) { .seasons { grid-template-columns: repeat(2, 1fr); } .seasons > div:nth-child(2) { border-right: none; } }
+  .seasons > div { padding: 1rem 1rem 1rem 0; border-right: 1px solid var(--rule); }
+  .seasons > div:last-child { border-right: none; }
+  .seasons .sn { font-family: "Fraunces", serif; font-style: italic; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; }
+  .seasons .sd { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ---------- REVIEWS ---------- */
+  section.reviews { padding: 4rem 0; border-top: 1px solid var(--rule); background: var(--paper-deep); }
+  .reviews-head {
+    display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .review-summary {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .review-summary .big {
+    font-family: "Fraunces", serif; font-size: 3.5rem; font-weight: 400;
+    color: var(--ink); letter-spacing: -0.025em; line-height: 0.95;
+  }
+  .review-summary .meta {
+    display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .review-summary .stars-big { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
+  .review-summary .count { font-size: 0.88rem; color: var(--ink-mute); }
+  .leave-review {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink);
+    border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .leave-review:hover { background: var(--ink); color: var(--paper); }
+  .review-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+  }
+  @media (max-width: 760px) { .review-grid { grid-template-columns: 1fr; } }
+  .review-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .review-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; }
+  .review-card .stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 0.08em; }
+  .review-card .when { font-size: 0.78rem; color: var(--ink-mute); font-weight: 500; }
+  .review-card p { font-size: 0.97rem; color: var(--ink-soft); margin: 0 0 0.85rem; line-height: 1.6; }
+  .review-card .who { font-family: "Fraunces", serif; font-style: italic; font-size: 0.95rem; color: var(--ink); }
+  .review-card .src { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-left: 0.5rem; }
+
+  /* ---------- HONEST NOTE ---------- */
+  section.honest { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  section.honest p { font-size: 1.02rem; color: var(--ink-soft); }
+  section.honest em { color: var(--ink); }
+
+  /* ---------- FOOTER ---------- */
+  footer.foot { padding: 2.5rem 0 2rem; border-top: 1px solid var(--rule); background: var(--paper-deep); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem; }
+  @media (max-width: 680px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-grid h4 { font-family: "Inter", sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 0.7rem; }
+  .foot-grid p { font-size: 0.88rem; color: var(--ink-soft); margin: 0; }
+  .foot-grid ul { list-style: none; padding: 0; margin: 0; }
+  .foot-grid ul li { margin-bottom: 0.4rem; font-size: 0.88rem; }
+  .foot-grid ul li a { color: var(--ink-soft); }
+  .foot-grid ul li a:hover { color: var(--ink); }
+  .foot-bottom { border-top: 1px solid var(--rule); padding-top: 1.25rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.76rem; color: var(--ink-mute); }
+  .foot-bottom em { font-family: "Fraunces", serif; }
+
+  /* ---------- LINE ART ---------- */
+  .line {
     stroke: currentColor;
     fill: none;
     stroke-width: 1.4;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+  .line.thin { stroke-width: 1.1; }
+
+  /* ---------- PUBLIC SERVICE CALLOUT ---------- */
+  .ps-callout {
+    margin: 2rem 0 0;
+    padding: 1.5rem 1.75rem;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--rust);
+    border-radius: 4px;
+  }
+  .ps-callout .label {
+    font-family: "Inter", sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--rust);
+    display: block; margin-bottom: 0.75rem;
+  }
+  .ps-callout h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.35rem; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.012em; line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+  .ps-callout p { font-size: 0.97rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 0.75rem; }
+  .ps-callout p:last-child { margin: 0; }
+  .ps-callout em { color: var(--ink); font-style: italic; }
 </style>
 </head>
 <body>
 
+
 <!-- ===================== NAV ===================== -->
 <nav class="top">
   <div class="inner">
-    <a href="https://seatoskytrails.com" class="mark">
-      <svg width="36" height="28" viewBox="0 0 36 28" class="line-art" aria-hidden="true">
-        <path d="M2 24 L8 14 L13 19 L19 8 L25 17 L30 12 L34 22"/>
-        <path d="M2 26 L34 26"/>
-      </svg>
-      <span class="mark-text">
-        Sea to Sky Trails
-        <small>Entry No. VI &middot; Whistler</small>
-      </span>
+    <a href="#" class="mark" style="color:var(--ink);">
+      Sea to Sky Trails
+      <small>An entry in Volume I</small>
     </a>
     <div class="links">
-      <a href="#idea">The Idea</a>
-      <a href="#route">Route</a>
-      <a href="#psa">Inflatables</a>
-      <a href="#ways">Two Ways</a>
-      <a href="#season">Season</a>
+      <a href="#overview">Overview</a>
+      <a href="#expect">What to expect</a>
+      <a href="#water">Rentals</a>
+      <a href="#season">When to go</a>
+      <a href="#reviews">Reviews</a>
     </div>
   </div>
 </nav>
 
-<!-- ===================== COORD RIBBON ===================== -->
-<div class="coords">
-  <div class="inner">
-    <span>50° 06′ N &nbsp;·&nbsp; 122° 57′ W</span>
-    <span>Volume I &nbsp;·&nbsp; Entry VI</span>
-    <span>Summer 2026</span>
-    <span>Filed from Whistler, BC</span>
+<!-- ===================== BREADCRUMB + TITLE ===================== -->
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="https://seatoskytrails.com/">Trails</a>
+    <span class="sep">/</span>
+    <span class="here">River of Golden Dreams</span>
   </div>
+
+  <div class="title-block">
+    <h1>River of Golden Dreams</h1>
+    <div class="meta-row">
+      <span class="stars">
+        <span class="star">&#9733;</span>
+        <span class="num">4.7</span>
+        <a href="#reviews" class="count">(38 reviews)</a>
+      </span>
+      <span class="dot"></span>
+      <span class="difficulty">Moderate</span>
+      <span class="dot"></span>
+      <a href="#" class="park underline-link">Rainbow Park &rarr; Meadow Park</a>
+      <span class="dot"></span>
+      <span style="color:var(--ink-soft);">Whistler, BC</span>
+    </div>
+
+    <div class="tabs">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#expect">What to expect</a>
+      <a href="#water">Rentals</a>
+      <a href="#season">When to go</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+  </div>
+
+  <!-- ===================== HERO LAYOUT ===================== -->
+  <div class="hero-layout">
+
+    <div class="hero-photo" style="background-image:url('https://images.pexels.com/photos/31769824/pexels-photo-31769824.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="img" aria-label="A vibrant river flowing through lush forest in Whistler, BC — River of Golden Dreams corridor"></div>
+
+    <div class="hero-details">
+      <div class="details-card">
+        <h3>Trail Details</h3>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 3 15 C 6 11, 10 18, 14 14 C 17 11, 20 15, 21 13"/>
+              <path d="M 3 19 C 6 15, 10 22, 14 18 C 17 15, 20 19, 21 17" opacity="0.55"/>
+            </svg>
+          </div>
+          <div class="k">Length</div>
+          <div class="v">~6 km</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 3 16 L 21 16"/>
+              <path d="M 6 12 C 9 14, 15 14, 18 12" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="k">Elevation gain</div>
+          <div class="v">0 m</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M 12 7 L 12 12 L 15 14"/>
+            </svg>
+          </div>
+          <div class="k">Estimated time</div>
+          <div class="v">2&ndash;3 hr</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 4 18 C 8 16, 12 16, 20 18"/>
+              <path d="M 20 18 L 17 15 M 20 18 L 17 21"/>
+              <circle cx="4" cy="18" r="1.4" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="k">Trail type</div>
+          <div class="v small">One-way</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="#d9a441"/>
+              <path d="M 12 3 A 9 9 0 0 1 12 21 Z" fill="#d9a441" stroke="none"/>
+            </svg>
+          </div>
+          <div class="k">Difficulty</div>
+          <div class="v small">Moderate</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 12 22 C 7 17, 4 13, 4 9 C 4 5, 7 3, 12 3 C 17 3, 20 5, 20 9 C 20 13, 17 17, 12 22 Z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div class="k">Park</div>
+          <div class="v small">Rainbow / Meadow</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 5 16 C 5 12, 7 10, 11 10 L 13 7 C 14 6, 18 6, 19 7 L 19 10 C 21 11, 22 13, 22 16 L 22 18 L 5 18 Z" />
+              <circle cx="9" cy="18" r="1.5"/>
+              <circle cx="18" cy="18" r="1.5"/>
+            </svg>
+          </div>
+          <div class="k">Dogs</div>
+          <div class="v small">On leash</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
-<!-- ===================== HERO ===================== -->
-<header class="hero">
+<!-- ===================== OVERVIEW ===================== -->
+<section class="overview" id="overview">
   <div class="wrap">
-    <span class="eyebrow">Whistler &nbsp;·&nbsp; Alta Lake to Green Lake</span>
-    <h1>River<br>of <em>Golden<br>Dreams</em>.</h1>
-    <p class="deck">A slow downstream corridor through Whistler&rsquo;s last great wetland &mdash; cottonwoods, herons, and the Coast Range above the willows. About five kilometres of moving water, a single direction, and a quiet problem with the cheap rafts at Walmart.</p>
-
-    <div class="meta">
-      <div class="item">
-        <div class="label">Distance</div>
-        <div class="value">~5&ndash;6 km on the river</div>
-      </div>
-      <div class="item">
-        <div class="label">Moving Time</div>
-        <div class="value">2 to 3 hours</div>
-      </div>
-      <div class="item">
-        <div class="label">Direction</div>
-        <div class="value">Downstream &mdash; always</div>
-      </div>
-      <div class="item">
-        <div class="label">Best Season</div>
-        <div class="value">Late June &mdash; mid August</div>
-      </div>
-      <div class="item">
-        <div class="label">Shuttle</div>
-        <div class="value">Required</div>
-      </div>
-    </div>
-
-    <!-- ====== HERO RIVER ART ====== -->
-    <div class="river-frame">
-      <svg viewBox="0 0 1400 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <g class="line-art">
-          <!-- Far banks: implied by sparse vegetation hints -->
-          <!-- Distant ridge (faint), bottom of frame above main river -->
-          <path opacity="0.25" d="M0 38 L120 22 L200 32 L320 14 L440 28 L560 18 L700 30 L820 16 L940 28 L1060 14 L1180 30 L1280 20 L1400 32"/>
-
-          <!-- North bank vegetation hints -->
-          <g opacity="0.45">
-            <path d="M40 78 L40 70 M38 74 L42 74"/>
-            <path d="M180 82 L180 72 M177 76 L183 76"/>
-            <path d="M320 80 L320 70 M317 74 L323 74"/>
-            <path d="M520 84 L520 72 M517 78 L523 78"/>
-            <path d="M780 78 L780 68 M777 73 L783 73"/>
-            <path d="M1040 82 L1040 70 M1037 76 L1043 76"/>
-            <path d="M1240 80 L1240 70 M1237 75 L1243 75"/>
-          </g>
-
-          <!-- North bank line (gentle, broken) -->
-          <path opacity="0.55" d="M0 95 Q120 92 240 96 T480 100 T720 96 T960 100 T1200 96 T1400 100"/>
-
-          <!-- MAIN RIVER LINE (centre, meandering) -->
-          <path stroke-width="1.7" d="M0 130 C 90 110, 180 160, 280 135 S 460 100, 560 140 S 740 175, 860 130 S 1060 95, 1180 145 S 1340 150, 1400 130"/>
-
-          <!-- Current lines beneath -->
-          <path opacity="0.7" d="M0 142 C 90 122, 180 172, 280 147 S 460 112, 560 152 S 740 187, 860 142 S 1060 107, 1180 157 S 1340 162, 1400 142"/>
-          <path opacity="0.45" d="M0 154 C 90 134, 180 184, 280 159 S 460 124, 560 164 S 740 199, 860 154 S 1060 119, 1180 169 S 1340 174, 1400 154"/>
-          <path opacity="0.25" d="M0 166 C 90 146, 180 196, 280 171 S 460 136, 560 176 S 740 211, 860 166 S 1060 131, 1180 181 S 1340 186, 1400 166"/>
-
-          <!-- South bank line -->
-          <path opacity="0.55" d="M0 200 Q160 196 320 200 T640 198 T960 202 T1280 198 T1400 200"/>
-
-          <!-- South bank tufts -->
-          <g opacity="0.45">
-            <path d="M100 210 Q103 204 106 210 Q109 204 112 210"/>
-            <path d="M260 213 Q263 207 266 213 Q269 207 272 213"/>
-            <path d="M440 211 Q443 205 446 211 Q449 205 452 211"/>
-            <path d="M680 213 Q683 207 686 213 Q689 207 692 213"/>
-            <path d="M900 211 Q903 205 906 211 Q909 205 912 211"/>
-            <path d="M1120 213 Q1123 207 1126 213 Q1129 207 1132 213"/>
-            <path d="M1300 211 Q1303 205 1306 211 Q1309 205 1312 211"/>
-          </g>
-
-          <!-- Beaver dam suggestion (south bank, mid-river) -->
-          <g transform="translate(640 188)" opacity="0.7">
-            <line x1="-22" y1="0" x2="22" y2="-2"/>
-            <line x1="-18" y1="-2" x2="18" y2="-4"/>
-            <line x1="-14" y1="-4" x2="12" y2="-1"/>
-            <line x1="-8" y1="1" x2="14" y2="-3"/>
-            <line x1="-20" y1="-6" x2="8" y2="-1"/>
-          </g>
-          <!-- Tiny beaver silhouette near dam -->
-          <g transform="translate(615 180)" opacity="0.85">
-            <path d="M0 0 Q4 -4 10 -3 Q14 -3 14 0 L13 2 L0 2 Z"/>
-            <circle cx="12" cy="-2" r="0.6" fill="currentColor"/>
-            <path d="M-1 1 L-6 4"/>
-          </g>
-
-          <!-- Canoe on the river, mid-frame, drifting -->
-          <g transform="translate(380 132)">
-            <path d="M-20 0 Q0 6 20 0"/>
-            <path d="M-20 0 Q0 3 20 0"/>
-            <line x1="-3" y1="-2" x2="-3" y2="-10"/>
-            <circle cx="-3" cy="-13" r="1.7"/>
-            <!-- paddle -->
-            <line x1="-12" y1="-6" x2="6" y2="-14"/>
-          </g>
-
-          <!-- Heron in the reeds, north bank, right side -->
-          <g transform="translate(1080 86)" opacity="0.85">
-            <!-- legs -->
-            <line x1="0" y1="0" x2="0" y2="16"/>
-            <line x1="3" y1="0" x2="3" y2="16"/>
-            <!-- body -->
-            <path d="M-7 -2 Q0 -6 9 -3 Q11 -1 9 1 L-5 1 Z"/>
-            <!-- neck S-curve -->
-            <path d="M7 -3 Q9 -10 4 -14 Q1 -16 4 -19"/>
-            <!-- beak -->
-            <line x1="4" y1="-19" x2="11" y2="-21"/>
-          </g>
-
-          <!-- Dragonfly, upper left, in flight -->
-          <g transform="translate(220 76)" opacity="0.7">
-            <line x1="-7" y1="0" x2="7" y2="0"/>
-            <path d="M0 0 Q-5 -4 -10 -2 Q-5 0 0 0"/>
-            <path d="M0 0 Q5 -4 10 -2 Q5 0 0 0"/>
-            <path d="M0 0 Q-5 4 -10 2 Q-5 0 0 0"/>
-            <path d="M0 0 Q5 4 10 2 Q5 0 0 0"/>
-          </g>
-
-          <!-- Highway 99 bridge zone marker (subtle vertical posts crossing river) -->
-          <g transform="translate(860 0)" opacity="0.55">
-            <line x1="0" y1="105" x2="0" y2="180" stroke-dasharray="2,3"/>
-            <line x1="20" y1="105" x2="20" y2="180" stroke-dasharray="2,3"/>
-            <line x1="-10" y1="108" x2="30" y2="108"/>
-          </g>
-
-          <!-- Put-in label tick (left) -->
-          <g opacity="0.7">
-            <line x1="20" y1="125" x2="20" y2="115"/>
-            <circle cx="20" cy="113" r="1.8"/>
-          </g>
-          <!-- Take-out label tick (right) -->
-          <g opacity="0.7">
-            <line x1="1380" y1="135" x2="1380" y2="125"/>
-            <circle cx="1380" cy="123" r="1.8"/>
-          </g>
-        </g>
-      </svg>
-      <div class="legend">
-        <span>Rainbow Park &mdash; Put-in</span>
-        <span>Highway 99 bridge &mdash; current builds</span>
-        <span>Meadow Park &mdash; Take-out</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<hr class="rule" />
-
-<!-- ===================== § I — THE IDEA ===================== -->
-<section id="idea">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ I &nbsp;·&nbsp; The Idea</span>
-      <h2>The slow corridor between two lakes.</h2>
-    </div>
-
-    <div class="two-col">
-      <div class="col-art">
-        <!-- Heron standing in reeds -->
-        <svg viewBox="0 0 240 320" class="line-art" aria-hidden="true">
-          <!-- Reeds -->
-          <g opacity="0.55">
-            <path d="M20 300 L20 220"/>
-            <path d="M35 300 L35 240"/>
-            <path d="M48 300 L48 215"/>
-            <path d="M60 300 L60 235"/>
-            <path d="M200 300 L200 230"/>
-            <path d="M215 300 L215 245"/>
-            <path d="M225 300 L225 220"/>
-          </g>
-          <!-- Waterline -->
-          <path opacity="0.5" d="M0 300 L240 300"/>
-          <path opacity="0.3" d="M0 308 L240 308"/>
-          <!-- Heron -->
-          <g transform="translate(95 110)">
-            <!-- Legs -->
-            <line x1="20" y1="100" x2="20" y2="190"/>
-            <line x1="32" y1="100" x2="32" y2="190"/>
-            <!-- Foot suggestions -->
-            <path d="M16 190 L24 190"/>
-            <path d="M28 190 L36 190"/>
-            <!-- Body -->
-            <path d="M0 92 Q26 82 56 92 Q62 100 56 108 L8 108 Q-2 100 0 92 Z"/>
-            <!-- Folded wing line -->
-            <path opacity="0.5" d="M10 95 Q26 88 52 96"/>
-            <!-- Tail -->
-            <path d="M52 100 L66 110 L58 102"/>
-            <!-- Neck S -->
-            <path d="M48 88 Q56 60 38 42 Q22 28 36 8"/>
-            <!-- Head -->
-            <path d="M36 8 Q44 2 50 8 Q44 14 36 12"/>
-            <!-- Beak -->
-            <line x1="50" y1="8" x2="68" y2="2"/>
-            <!-- Eye -->
-            <circle cx="44" cy="8" r="0.8" fill="currentColor"/>
-          </g>
-        </svg>
-      </div>
-
-      <div class="prose">
-        <p>The River of Golden Dreams is the most quietly famous paddle in Whistler. It is not a whitewater run. It is not a lake. It is a five-kilometre wetland corridor that ties Alta Lake to Green Lake, drifting north through cottonwood stands and willow thickets in the valley floor while the Coast Range stacks up to the west. You sit in a canoe. You read the bend ahead. The river does the work.</p>
-
-        <p>Locals have paddled this corridor for generations. The route is on the cover of half the resort&rsquo;s shoulder-season brochures. It is also, on the right July morning, one of the few places in Whistler where you can disappear inside your own day &mdash; no chairlift queue, no bike-park hum, just the click of a great blue heron lifting out of the reeds twenty feet off your bow.</p>
-
-        <blockquote class="pull">
-          &ldquo;The river is not difficult. It is not even fast, most days. It is only unforgiving to the people who treat it as a pool.&rdquo;
-          <cite>House style, vol. I</cite>
-        </blockquote>
-
-        <p>It is also a one-way trip. The current is gentle but it is real, and the channel is narrow enough that turning around mid-river is not on the menu. You go from Rainbow Park to Meadow Park, and you sort the car situation before you put in. That single fact &mdash; the shuttle &mdash; is what catches people out more than any rapid ever has.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § II — THE ROUTE ===================== -->
-<section id="route" class="waypoints">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ II &nbsp;·&nbsp; The Route</span>
-      <h2>Rainbow Park to Meadow Park, bend by bend.</h2>
-      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">A pencil-sketch of the paddle, end to end. Times assume an honest, unhurried morning &mdash; not a race, not a dawdle.</p>
-    </div>
-
-    <div class="waypoint-list">
-
-      <div class="waypoint">
-        <span class="num">i.</span>
-        <div>
-          <h3>Rainbow Park &mdash; the put-in.</h3>
-          <p>The west shore of Alta Lake. There is a grassy launch, a dock, parking that fills by ten in July, and a public washroom. Load the boat at the water&rsquo;s edge, not at the car. Carry your PFD already buckled.</p>
-        </div>
-        <span class="mile">km 0.0</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">ii.</span>
-        <div>
-          <h3>The Alta Lake crossing.</h3>
-          <p>A short paddle along the lake&rsquo;s north shore to reach the river mouth. Ten or fifteen minutes if the lake is calm. If a wind is already on the water in the morning, take it as a warning &mdash; Green Lake will be worse.</p>
-        </div>
-        <span class="mile">km 0.0&ndash;0.8</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">iii.</span>
-        <div>
-          <h3>The river mouth.</h3>
-          <p>The water narrows. Cottonwoods close overhead. The current picks up just enough to feel under the hull. From here, you are committed: it is downstream-only until Green Lake.</p>
-        </div>
-        <span class="mile">km 0.8</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">iv.</span>
-        <div>
-          <h3>The wetland section.</h3>
-          <p>The classic stretch. Tight meanders through reeds and willow. Herons, kingfishers, ospreys overhead, the occasional beaver slide cut into the bank. Read each bend ahead and keep the boat in the deeper outside of the curve where you can.</p>
-        </div>
-        <span class="mile">km 1&ndash;3</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">v.</span>
-        <div>
-          <h3>The Highway 99 bridge.</h3>
-          <p>The unmistakable midway marker. The channel narrows under the bridge and the current picks up noticeably. Eyes up, paddle ready, line yourself centre-channel before you go through. After the bridge, the river opens out again.</p>
-        </div>
-        <span class="mile">km 3&ndash;3.5</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">vi.</span>
-        <div>
-          <h3>The lower meander.</h3>
-          <p>Wider channel, slower water, more sky. This is the stretch you remember &mdash; Wedge and Armchair stacked on the horizon to the north, swallows working the surface, the valley wide open. Take the time.</p>
-        </div>
-        <span class="mile">km 3.5&ndash;5</span>
-      </div>
-
-      <div class="waypoint">
-        <span class="num">vii.</span>
-        <div>
-          <h3>Green Lake &mdash; the take-out.</h3>
-          <p>The river spits you onto the south end of Green Lake. Hug the right-hand (east) shore and paddle the last short stretch into the Meadow Park beach. If the afternoon thermal has come up, you will feel it here &mdash; this is why you put in early.</p>
-        </div>
-        <span class="mile">km 5&ndash;6</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § III — THE EXPLORER 200 PROBLEM ===================== -->
-<section id="psa" class="psa">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="psa-tag">Public Service Notice</span>
-      <span class="eyebrow">§ III &nbsp;·&nbsp; The Explorer 200 Problem</span>
-      <h2>The cheap raft and the <em>sharpened stick.</em></h2>
-      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">Every summer, hundreds of people stop at Walmart or Canadian Tire on the drive up the corridor, buy an Intex Explorer 200 for around twenty dollars, and launch it on the River of Golden Dreams. We are asking you, plainly, not to be one of them.</p>
-    </div>
-
-    <div class="psa-grid">
-      <div class="prose">
-        <p>The reason is not snobbery. The reason is a beaver.</p>
-
-        <p>The River of Golden Dreams is a working beaver corridor &mdash; one of the densest in the Sea to Sky valley floor. Beavers fell young cottonwood and willow, chew the branches down to points sharp enough to whittle a pencil, and leave the stubs angled into the riverbed and the soft banks. Those stakes are not a hazard the beaver intends. They are simply the byproduct of an animal building a home in the same channel you are paddling.</p>
-
-        <p>An Intex Explorer 200 is a vinyl bladder twenty thousandths of an inch thick, designed for the deep end of a backyard pool. Drag it across a beaver-sharpened stake at any angle and it does not bounce off. It punctures. Sometimes silently. Often a hundred metres before you understand that anything has gone wrong.</p>
-
-        <div class="anecdote">
-          &ldquo;The first time I scouted this river I went down in something I would not put my dog in now. I felt the air go out before I saw the cut. Two minutes later I was standing waist-deep in snowmelt with the boat folded around my ankles, listening to the part of the raft that ripped off head downstream without me. I walked out. The river kept the boat.&rdquo;
-          <cite>&mdash; Jeremy, Squamish Canoe Rental, on an early scouting trip</cite>
-        </div>
-
-        <p>When the raft fails &mdash; and on this river, given enough trips, it will &mdash; you are standing in glacier-fed water in the low-to-mid teens Celsius, with no boat, on a bank too thick with willow to walk out of easily. Whistler Search &amp; Rescue gets these calls every summer. The shredded vinyl washes the rest of the way to Green Lake, where it stays in the reeds for years.</p>
-
-        <p>For the price of one Explorer 200 you can rent a real canoe or a hard paddleboard for the day &mdash; a boat that takes the stake, a shuttle that handles the cars, and a river that does not end the day with a strip of plastic catching on the willows. That trade is the entire point of this entry.</p>
-      </div>
-
-      <div class="psa-art">
-        <!-- Beaver + sharpened stake illustration -->
-        <svg viewBox="0 0 360 360" class="line-art" aria-hidden="true">
-          <!-- Waterline -->
-          <path opacity="0.5" d="M0 230 Q180 240 360 230"/>
-          <path opacity="0.3" d="M0 245 Q180 252 360 245"/>
-
-          <!-- Beaver -->
-          <g transform="translate(60 150)">
-            <!-- Body -->
-            <path d="M0 50 Q10 20 60 18 Q110 18 140 32 Q150 40 145 55 Q140 70 100 75 L20 75 Q0 70 0 50 Z"/>
-            <!-- Head -->
-            <path d="M140 32 Q160 28 170 38 Q172 48 162 54 Q150 52 145 50"/>
-            <!-- Eye -->
-            <circle cx="158" cy="38" r="1.6" fill="currentColor"/>
-            <!-- Ear -->
-            <path d="M152 30 Q156 24 160 30"/>
-            <!-- Front paw -->
-            <path d="M110 72 L110 88 L104 92 M110 88 L116 92"/>
-            <!-- Back paw -->
-            <path d="M40 75 L42 92 L34 96 M42 92 L50 96"/>
-            <!-- Tail (flat paddle) -->
-            <path d="M0 55 Q-25 60 -38 78 Q-32 90 -10 82 Q-2 75 0 70"/>
-            <path opacity="0.4" d="M-26 68 L-18 78 M-22 64 L-12 74 M-30 72 L-22 82"/>
-          </g>
-
-          <!-- Sharpened stakes embedded in/around water -->
-          <g>
-            <!-- Stake 1 (in foreground) -->
-            <g transform="translate(240 230)">
-              <path d="M0 0 L-8 60"/>
-              <path d="M0 0 L8 60"/>
-              <path d="M-8 60 L8 60"/>
-              <!-- Chewed point detail -->
-              <path d="M-3 -2 L0 4 L3 -2" opacity="0.6"/>
-              <path d="M-5 -1 L-2 2" opacity="0.4"/>
-              <path d="M5 -1 L2 2" opacity="0.4"/>
-            </g>
-            <!-- Stake 2 -->
-            <g transform="translate(290 240) rotate(-15)" opacity="0.85">
-              <path d="M0 0 L-6 50"/>
-              <path d="M0 0 L6 50"/>
-              <path d="M-3 -1 L0 3 L3 -1" opacity="0.6"/>
-            </g>
-            <!-- Stake 3 (further) -->
-            <g transform="translate(330 232) rotate(8)" opacity="0.7">
-              <path d="M0 0 L-5 45"/>
-              <path d="M0 0 L5 45"/>
-              <path d="M-2 -1 L0 2 L2 -1" opacity="0.6"/>
-            </g>
-          </g>
-
-          <!-- Felled branch on bank -->
-          <g transform="translate(200 110)" opacity="0.7">
-            <path d="M0 0 L80 -10"/>
-            <path d="M-6 4 L0 0 L-2 -6" opacity="0.7"/>
-            <path d="M86 -14 L80 -10 L86 -6" opacity="0.7"/>
-            <!-- bite marks -->
-            <path d="M14 -2 L18 -6 M30 -4 L34 -8 M48 -6 L52 -10 M64 -8 L68 -12" opacity="0.5"/>
-          </g>
-
-          <!-- Faint ripples -->
-          <path opacity="0.3" d="M30 270 Q60 273 90 270"/>
-          <path opacity="0.3" d="M140 285 Q170 288 200 285"/>
-          <path opacity="0.3" d="M260 295 Q290 298 320 295"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § IV — TWO WAYS ===================== -->
-<section id="ways" class="options">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ IV &nbsp;·&nbsp; The Two Ways To Do It</span>
-      <h2>The easy way, and the experienced way.</h2>
-      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">There are two honest ways to paddle the River of Golden Dreams. Both work. Neither involves a Walmart raft.</p>
-    </div>
-
-    <div class="options-grid">
-
-      <div class="option">
-        <div class="option-num">Option i.</div>
-        <h3>Canoe or paddleboard rental, shuttle handled.</h3>
-        <div class="who">For most visitors &middot; First-timers &middot; Families</div>
-        <p>Squamish Canoe Rental delivers a real canoe or a hard stand-up paddleboard to Rainbow Park in the morning, and picks it up at Meadow Park in the afternoon. You do not move a boat. You do not run a second car up to the take-out. You paddle, you land, you walk away. This is the option we recommend by default for the River of Golden Dreams &mdash; the one-way logistics and the boat choice are both already solved.</p>
-        <a href="https://squamishcanoerental.com/canoe-delivery-whistler/" class="pillish">Book delivery &amp; shuttle &rarr;</a>
-      </div>
-
-      <div class="option">
-        <div class="option-num">Option ii.</div>
-        <h3>Your own boat, two-car shuttle.</h3>
-        <div class="who">For experienced paddlers &middot; Locals &middot; Returning visitors</div>
-        <p>The traditional approach. Drop one car at Meadow Park, drive the second to Rainbow Park with the boat, paddle down, and the take-out car is waiting. Forty minutes of vehicle juggling at the start, none at the end. The only rule is the rule of the boat itself: a real canoe or hard SUP, not a pool toy. If you would not run it on a flat lake in October, do not run it here in July.</p>
-        <a href="#season" class="pillish">Check the season notes &rarr;</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § V — BOAT CHOICE ===================== -->
-<section id="boat">
-  <div class="wrap">
-    <div class="two-col">
-      <div class="col-art">
-        <!-- Canoe + paddle stroke single-line art -->
-        <svg viewBox="0 0 240 320" class="line-art" aria-hidden="true">
-          <!-- Water -->
-          <path opacity="0.5" d="M0 200 Q120 210 240 200"/>
-          <path opacity="0.35" d="M0 215 Q120 222 240 215"/>
-          <path opacity="0.2" d="M0 230 Q120 235 240 230"/>
-          <!-- Canoe -->
-          <path d="M30 195 Q120 220 210 195"/>
-          <path d="M30 195 Q120 207 210 195"/>
-          <!-- Thwarts -->
-          <line x1="80" y1="200" x2="80" y2="206"/>
-          <line x1="160" y1="200" x2="160" y2="206"/>
-          <!-- Paddler (kneeling silhouette) -->
-          <g transform="translate(120 130)">
-            <circle cx="0" cy="0" r="9"/>
-            <path d="M0 9 L0 68"/>
-            <!-- arms holding paddle -->
-            <line x1="-22" y1="22" x2="18" y2="38"/>
-          </g>
-          <!-- Paddle shaft and blade -->
-          <line x1="98" y1="152" x2="160" y2="240"/>
-          <path d="M160 235 L172 258 L178 248 Z"/>
-          <!-- Mountain hint -->
-          <path opacity="0.35" d="M20 80 L70 30 L110 65 L155 25 L195 60 L230 35"/>
-        </svg>
-      </div>
-
-      <div class="prose">
-        <span class="eyebrow">§ V &nbsp;·&nbsp; Boat Choice</span>
-        <h2 style="margin-top:1.5rem;margin-bottom:1.5rem;">The right hull for this river.</h2>
-
-        <p>The River of Golden Dreams was made for a canoe. A 15- to 16-foot tandem tracks well in the narrow channel, carries a dry bag and a small cooler without complaint, sits low enough to read the wind, and shrugs off the beaver-stake encounter that defines this river&rsquo;s hazard profile. A canoe is the default answer here, and it has been for fifty years.</p>
-
-        <ul class="tenets">
-          <li>
-            <span class="n">i.</span>
-            <span class="t">
-              Canoe &mdash; ideal.
-              <small>Tandem or solo, hard hull. Tracks the bends. Forgives the bottom. Takes a passenger and a lunch.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">ii.</span>
-            <span class="t">
-              Hard SUP &mdash; for confident paddlers.
-              <small>Works on a calm morning. You will get off the board at least once in the tight bends. Falls are part of the day.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">iii.</span>
-            <span class="t">
-              Kayak &mdash; fine, with a caveat.
-              <small>Manoeuvrable. The river is shallow in places, so a rec kayak with a skeg can drag bottom in August.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">iv.</span>
-            <span class="t">
-              Inflatable SUP &mdash; passable.
-              <small>Better than the cheap rafts, but still slow to turn and vulnerable to the same beaver stakes. Not our first pick.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">v.</span>
-            <span class="t">
-              Intex Explorer 200 and equivalents &mdash; the wrong call.
-              <small>The specific failure mode this river is known for. Please read § III again.</small>
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § VI — WHEN TO GO ===================== -->
-<section id="season" class="waypoints">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ VI &nbsp;·&nbsp; When To Go</span>
-      <h2>The window is shorter than you think.</h2>
-      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">The River of Golden Dreams runs on snowmelt. The window opens late, peaks fast, and closes quietly by late August. Inside that window, the time of day matters more than the date.</p>
-    </div>
-
-    <div class="season">
-      <div class="month">
-        <div class="lab">May &mdash; Early June</div>
-        <div class="val">Too high. Cold, fast, debris-loaded. Not the season.</div>
-      </div>
-      <div class="month peak">
-        <div class="lab">Late June &mdash; July</div>
-        <div class="val">Peak flow. The classic window. Mornings calm, water full.</div>
-      </div>
-      <div class="month peak">
-        <div class="lab">Early August</div>
-        <div class="val">The sweet spot. Warm air, settled water, herons everywhere.</div>
-      </div>
-      <div class="month">
-        <div class="lab">Late August</div>
-        <div class="val">Levels drop. Shallows show. Some scraping likely.</div>
-      </div>
-      <div class="month">
-        <div class="lab">September on</div>
-        <div class="val">Cold and bony. Locals only. Not recommended.</div>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top:5rem;">
-      <div class="prose">
-        <span class="eyebrow">Time of day</span>
-        <h3 style="margin-top:1.25rem;margin-bottom:1.25rem;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.85rem;letter-spacing:-0.015em;">Be on the water before nine.</h3>
-        <p>Mornings on the valley floor are the kindest. The lake glasses off, the river runs cool, the herons are still in close. Whistler&rsquo;s afternoon thermal builds quickly &mdash; by two in the afternoon the wind comes up the valley and pushes hard against the open stretch of Green Lake. If your take-out paddle is into a whitecap headwind, you waited too long.</p>
-        <p>The classic plan: put in at Rainbow Park between seven and nine in the morning, take out at Meadow Park between ten and noon. You have the calm water for the wetland section, and you are off Green Lake before the wind finds it.</p>
-      </div>
-      <div class="prose">
-        <span class="eyebrow">Water Level</span>
-        <h3 style="margin-top:1.25rem;margin-bottom:1.25rem;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.85rem;letter-spacing:-0.015em;">Hot week, faster river.</h3>
-        <p>The river answers the snowfields above it. A hot stretch in July will lift levels for a day or two after; a cold snap drops them. The current at the Highway 99 bridge zone is the single most reliable read of conditions &mdash; if it&rsquo;s pushing through there with real force, the upstream sections will be moving too. Ask the rental shop the morning of. They paddle it every week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § VII — THE PACK ===================== -->
-<section id="pack">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ VII &nbsp;·&nbsp; The Pack</span>
-      <h2>What goes in the boat.</h2>
-    </div>
-
-    <div class="two-col">
-      <div class="col-art">
-        <!-- Dragonfly + paddle stroke -->
-        <svg viewBox="0 0 240 320" class="line-art" aria-hidden="true">
-          <!-- Dragonfly -->
-          <g transform="translate(120 110)">
-            <!-- Body -->
-            <line x1="0" y1="-30" x2="0" y2="60"/>
-            <line x1="-2" y1="-26" x2="2" y2="-26"/>
-            <line x1="-3" y1="-18" x2="3" y2="-18"/>
-            <!-- Head -->
-            <circle cx="0" cy="-34" r="4"/>
-            <!-- Wings -->
-            <path d="M0 -10 Q-40 -28 -64 -16 Q-40 -8 0 -10"/>
-            <path d="M0 -10 Q40 -28 64 -16 Q40 -8 0 -10"/>
-            <path d="M0 6 Q-36 -8 -58 4 Q-36 12 0 6"/>
-            <path d="M0 6 Q36 -8 58 4 Q36 12 0 6"/>
-            <!-- Tail segments -->
-            <line x1="-2" y1="15" x2="2" y2="15"/>
-            <line x1="-2" y1="28" x2="2" y2="28"/>
-            <line x1="-2" y1="40" x2="2" y2="40"/>
-            <line x1="-2" y1="52" x2="2" y2="52"/>
-          </g>
-          <!-- Water + paddle stroke ripples below -->
-          <path opacity="0.5" d="M20 240 Q120 250 220 240"/>
-          <path opacity="0.35" d="M20 258 Q120 266 220 258"/>
-          <path opacity="0.2" d="M20 276 Q120 282 220 276"/>
-          <!-- Paddle stroke -->
-          <g transform="translate(80 220)">
-            <line x1="0" y1="0" x2="60" y2="50"/>
-            <path d="M60 45 L72 70 L80 60 Z"/>
-            <!-- Splash -->
-            <path d="M70 75 L66 84" opacity="0.6"/>
-            <path d="M76 78 L78 88" opacity="0.6"/>
-            <path d="M82 75 L88 84" opacity="0.6"/>
-          </g>
-        </svg>
-      </div>
-
-      <div class="prose">
-        <p>The River of Golden Dreams is a short trip on a hot day in summer. It is also, between the put-in and the take-out, an environment where falling in is genuinely cold. Pack accordingly.</p>
-
-        <ul class="tenets">
-          <li>
-            <span class="n">i.</span>
-            <span class="t">
-              PFD &mdash; on, not under your seat.
-              <small>Required by law, worn by everybody. Non-negotiable.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">ii.</span>
-            <span class="t">
-              Dry bag.
-              <small>One per boat, clipped in. Phone, keys, snacks, dry layer.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">iii.</span>
-            <span class="t">
-              Waterproof phone case on a lanyard.
-              <small>For photos, and so you can still call from the take-out if something goes sideways.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">iv.</span>
-            <span class="t">
-              Sun layers and a brimmed hat.
-              <small>The valley floor at midday has no shade.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">v.</span>
-            <span class="t">
-              Footwear that can step out.
-              <small>Closed-toe sandals or old runners. You may need to get out and walk a shallow.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">vi.</span>
-            <span class="t">
-              One litre of water per paddler, minimum.
-              <small>It is hotter on the water than it looks from the parking lot.</small>
-            </span>
-          </li>
-          <li>
-            <span class="n">vii.</span>
-            <span class="t">
-              A small dry layer.
-              <small>A thin fleece, a packable shell. If you go in, you will want it on the take-out.</small>
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== § VIII — HONEST TALK ===================== -->
-<section id="honest" class="options">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ VIII &nbsp;·&nbsp; Honest Talk</span>
-      <h2>It is not whitewater. It is not a pool.</h2>
-      <p class="lead" style="margin-top:1.5rem;color:var(--ink-soft);">The River of Golden Dreams is gentle, not benign. The difference matters.</p>
-    </div>
-
-    <div class="prose" style="max-width:760px;">
-      <p>You will read trip reports that call this paddle &ldquo;easy.&rdquo; They are not wrong. They are also not the whole picture. The river is moving. The water is cold. The channel is narrow enough in places that a downed cottonwood &mdash; a strainer &mdash; can block a tight corner without notice, and the river will push a swamped boat into it before you have decided what to do.</p>
-
-      <p>The current at the Highway 99 bridge picks up perceptibly. Most paddlers go through fine. Some get sideways. Get yourself centre-channel, eyes downstream, paddle in the water as a rudder &mdash; not a brace &mdash; and you will be through in fifteen seconds.</p>
-
-      <p>The water is glacier-fed and stays cold all summer. A swim is recoverable. A long swim is not. This is the entire reason the PFD goes on at the launch ramp, not at the first ripple.</p>
-
-      <p>Whistler Search &amp; Rescue gets calls off this river every summer. The vast majority involve the same combination: a cheap inflatable, no PFD, an afternoon launch into a wind on Green Lake, and one person who could not get themselves to the bank. Do the opposite of all of that, and you will have one of the best paddles of your life.</p>
-
-      <blockquote class="pull">
-        &ldquo;Easy is not the same as safe. Easy means the river will take you downstream whether you are ready or not.&rdquo;
-        <cite>House style, vol. I</cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ===================== COLOPHON ===================== -->
-<section id="colophon" class="colophon tight">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">§ IX &nbsp;·&nbsp; Colophon</span>
-      <h2>Letters, leads, &amp; corrections.</h2>
-    </div>
-
-    <div class="colophon-grid">
+    <div class="grid">
       <div>
-        <h4>The Entry</h4>
-        <p style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.05rem;color:var(--ink);max-width:36ch;line-height:1.5;">
-          Entry VI in the Sea to Sky Trails. Edited from notes on the water and on the bank, between Rainbow Park and Meadow Park, summer 2026.
-        </p>
+        <span class="section-eyebrow">Quick Take</span>
+        <p class="lead">RoGD is the iconic Whistler paddle &mdash; slow wetland between Alta Lake and Green Lake, herons and mountains in every direction. It&rsquo;s also the trip the most people botch with a $20 inflatable raft from Walmart.</p>
+        <p>The route runs from Rainbow Park on Alta Lake, across a short stretch of open lake, and into the river mouth where the wetland corridor begins. From there it&rsquo;s about 5&ndash;6 km of slow, downstream paddling through reeds and second-growth forest to the takeout at Meadow Park on Green Lake. Two to three hours of moving time, always downstream, always one-way. You need a shuttle.</p>
+        <p>Most of it is gentle. A few corners hide logs and strainers, and the current picks up under the Highway 99 bridge zone in the middle of the run. Morning is the call &mdash; Whistler&rsquo;s afternoon thermals make Green Lake choppy by 2 p.m. and the takeout into a slog.</p>
+
+        <div class="ps-callout">
+          <span class="label">Public Service Note &middot; the Explorer 200 problem</span>
+          <h3>Please don&rsquo;t put in on a $20 Intex raft.</h3>
+          <p>Every summer, hundreds of people see RoGD on Instagram, stop at <em>Walmart</em> or <em>Canadian Tire</em> on the drive up, and buy an <em>Intex Explorer 200</em> inflatable thinking it&rsquo;ll be fine. It isn&rsquo;t.</p>
+          <p>RoGD is a beaver corridor. Beavers chew branches into sharp stakes that stay embedded in the river bottom and along the banks. Those stakes puncture cheap vinyl on contact. This happened to <em>Jeremy</em> personally on an early scouting trip &mdash; it&rsquo;s part of why he runs the shuttle now.</p>
+          <p>When an Explorer 200 pops mid-river, paddlers end up stranded in freezing snowmelt water with no boat. Whistler Search &amp; Rescue gets these calls every summer. The shredded vinyl washes into Green Lake and stays there. For the same $20 you&rsquo;d spend on a single-use raft, you can rent a real board or canoe.</p>
+        </div>
       </div>
-      <div>
-        <h4>Read</h4>
+
+      <aside class="sidecard">
+        <h4>At a glance</h4>
         <ul>
-          <li><a href="#idea">The Idea</a></li>
-          <li><a href="#route">The Route</a></li>
-          <li><a href="#psa">The Explorer 200 Problem</a></li>
-          <li><a href="#ways">The Two Ways</a></li>
-          <li><a href="#season">When To Go</a></li>
+          <li><span class="k">Region</span><span class="v">Whistler</span></li>
+          <li><span class="k">Put-in</span><span class="v">Rainbow Park</span></li>
+          <li><span class="k">Take-out</span><span class="v">Meadow Park</span></li>
+          <li><span class="k">Direction</span><span class="v"><em>Downstream only</em></span></li>
+          <li><span class="k">Shuttle</span><span class="v">Required</span></li>
+          <li><span class="k">Best season</span><span class="v">Late Jun &ndash; mid-Aug</span></li>
+          <li><span class="k">Best time</span><span class="v">Morning</span></li>
+          <li><span class="k">Dogs</span><span class="v">On leash</span></li>
         </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT TO EXPECT ===================== -->
+<section class="expect" id="expect">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">What to Expect</span>
+      <h2>Six things to know before you put in.</h2>
+    </div>
+
+    <div class="expect-grid">
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 3 14 C 8 9, 12 19, 16 14 S 24 9, 29 14"/>
+            <path d="M 3 20 C 8 15, 12 25, 16 20 S 24 15, 29 20" opacity="0.55"/>
+            <path d="M 3 26 C 8 22, 12 30, 16 26 S 24 22, 29 26" opacity="0.35"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Slow wetland river</h3>
+          <p>Reeds, mud banks, mountain reflections. Quiet water most of the way.</p>
+        </div>
       </div>
-      <div>
-        <h4>Book</h4>
-        <ul>
-          <li><a href="https://squamishcanoerental.com/canoe-delivery-whistler/">Canoe &amp; SUP delivery, Whistler</a></li>
-          <li><a href="https://squamishcanoerental.com/">Squamish Canoe Rental</a></li>
-        </ul>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 6 22 C 8 16, 12 13, 16 13 C 20 13, 24 16, 26 22"/>
+            <path d="M 16 13 C 16 9, 18 6, 21 6"/>
+            <path d="M 21 6 C 22 5, 23 7, 21 7" opacity="0.7"/>
+            <path d="M 12 19 C 14 18, 16 18, 18 19" opacity="0.55"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Herons + ospreys + beavers</h3>
+          <p>Active wildlife corridor. Herons in the reeds, ospreys overhead, beaver workings on the banks.</p>
+        </div>
       </div>
-      <div>
-        <h4>Elsewhere</h4>
-        <ul>
-          <li><a href="https://seatoskytrails.com">Sea to Sky Trails</a></li>
-          <li><a href="mailto:hello@seatoskytrails.com">Correct a fact</a></li>
-          <li><a href="mailto:hello@seatoskytrails.com">Pitch a guide</a></li>
-        </ul>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 4 22 L 28 22"/>
+            <path d="M 8 22 L 8 12 C 8 10, 10 10, 10 12 L 10 22"/>
+            <path d="M 22 22 L 22 12 C 22 10, 24 10, 24 12 L 24 22"/>
+            <path d="M 4 26 C 9 23, 14 28, 18 25 C 22 23, 26 27, 28 25" opacity="0.6"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Hwy 99 bridge current zone</h3>
+          <p>Midway, the river squeezes under Highway 99. Current picks up. Stay alert through the bridge.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 4 18 L 28 18" opacity="0.4"/>
+            <path d="M 6 12 C 12 14, 18 22, 26 20"/>
+            <path d="M 8 22 C 14 24, 18 14, 28 16" opacity="0.7"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Logs + strainers in corners</h3>
+          <p>Wood collects on the outside of bends. Read the river. Don&rsquo;t pin yourself against a strainer.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 4 16 C 12 14, 22 18, 28 16"/>
+            <path d="M 28 16 L 24 12 M 28 16 L 24 20"/>
+            <circle cx="4" cy="16" r="1.8" fill="currentColor" stroke="none"/>
+            <path d="M 4 22 C 12 24, 22 20, 28 22" opacity="0.35"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Downstream only &mdash; shuttle required</h3>
+          <p>You can&rsquo;t paddle back up. Two cars, a friend with keys, or a shuttle service. Plan it before the put-in.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <circle cx="16" cy="16" r="6"/>
+            <path d="M 16 4 L 16 8 M 16 24 L 16 28 M 4 16 L 8 16 M 24 16 L 28 16"/>
+            <path d="M 8 8 L 11 11 M 21 21 L 24 24 M 8 24 L 11 21 M 21 11 L 24 8" opacity="0.55"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Morning is calmest</h3>
+          <p>Whistler afternoon thermals make Green Lake choppy by 2 p.m. Be off the river by then.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===================== RENTALS ===================== -->
+<section class="water" id="water">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Get a Boat on the Water</span>
+      <h2>Three ways to do RoGD right.</h2>
+    </div>
+
+    <div class="water-cards">
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <path d="M 3 23 C 13 32, 27 32, 37 23"/>
+            <path d="M 3 23 C 13 27, 27 27, 37 23"/>
+            <path d="M 20 25 L 20 32"/>
+            <path d="M 12 7 C 16 13, 20 21, 24 27"/>
+            <path d="M 10 5 C 9 3, 14 1, 14 5"/>
+          </svg>
+        </div>
+        <h3>Canoe Delivery</h3>
+        <p>Real canoe delivered to Rainbow Park (Alta Lake put-in). Picked up at Meadow Park (Green Lake takeout). One-way shuttle handled. Up to three paddlers.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a canoe</a>
+      </div>
+
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <path d="M 6 32 C 15 36, 25 36, 34 32 C 25 30, 15 30, 6 32 Z"/>
+            <circle cx="20" cy="10" r="2.5"/>
+            <path d="M 20 13 L 20 28"/>
+            <path d="M 20 17 L 26 14"/>
+            <path d="M 28 4 L 28 29"/>
+            <path d="M 26 4 L 30 4"/>
+          </svg>
+        </div>
+        <h3>Paddleboard Delivery</h3>
+        <p>Hard SUP delivered to Rainbow Park, picked up at Meadow Park. For confident paddlers &mdash; be ready to kneel through the narrow sections.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a board</a>
+      </div>
+
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <circle cx="20" cy="20" r="14"/>
+            <path d="M 14 26 C 17 22, 19 18, 22 14 C 23 17, 22 19, 20 22 C 18 24, 16 25, 14 26 Z"/>
+            <circle cx="20" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+            <path d="M 20 4 L 20 7" opacity="0.55"/>
+            <path d="M 36 20 L 33 20" opacity="0.55"/>
+            <path d="M 20 36 L 20 33" opacity="0.55"/>
+            <path d="M 4 20 L 7 20" opacity="0.55"/>
+          </svg>
+        </div>
+        <h3>Hire a Guide</h3>
+        <p>Local guide who knows the beaver corridor, the strainers, the Highway 99 bridge current, and the Green Lake takeout. Best for first-timers or anyone new to moving water.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a guide</a>
+      </div>
+    </div>
+
+    <div class="closure-note">
+      <strong>Field Note &middot; the shuttle reality</strong>
+      RoGD is one-way. You <em>cannot</em> paddle back up from Meadow Park. Plan the shuttle before you put in &mdash; two cars staged at each end, a delivery service that handles pickup, or a friend who&rsquo;ll meet you on the Green Lake side. Walking the Valley Trail back with a wet boat is a slog nobody enjoys.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE ROUTE ===================== -->
+<section class="deep" id="route">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">The Route</span>
+      <h2>Rainbow to Meadow, beat by beat.</h2>
+    </div>
+
+    <div class="lake-rows">
+      <div class="lake">
+        <div class="name">Rainbow Park</div>
+        <div class="desc">Put in at the beach on Alta Lake. Wide, calm, public. Parking fills early on weekends. Short paddle across the lake to the north end where the river mouth opens up in the reeds.</div>
+      </div>
+      <div class="lake">
+        <div class="name">River mouth</div>
+        <div class="desc">The wetland corridor begins. Slow, glassy water through tall reeds. Mountains in every direction. Bring a camera; the herons start here.</div>
+      </div>
+      <div class="lake">
+        <div class="name">Hwy 99 bridge</div>
+        <div class="desc">Midway the river ducks under the highway. The current picks up, the channel narrows, and any wood that&rsquo;s washed down piles up on the bends just past. Stay centred, eyes forward.</div>
+      </div>
+      <div class="lake">
+        <div class="name">Lower corridor</div>
+        <div class="desc">Narrower, more strainers, more turns. Watch for beaver workings on the banks &mdash; sharpened stakes embedded in the bottom are why cheap inflatables die here.</div>
+      </div>
+      <div class="lake">
+        <div class="name">Meadow Park</div>
+        <div class="desc">The river opens into Green Lake. Pull out on river-right at the park beach. If you wait past 2 p.m., expect a headwind across the lake on the way to the takeout.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHEN ===================== -->
+<section class="deep" id="season">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">When to Go</span>
+      <h2>The season is short. Pick the morning.</h2>
+    </div>
+
+    <div class="seasons">
+      <div>
+        <div class="sn">May &ndash; early Jun</div>
+        <div class="sd">High snowmelt. Cold water, pushy current, more strainers. Not the time for beginners.</div>
+      </div>
+      <div>
+        <div class="sn">Late Jun &ndash; Jul</div>
+        <div class="sd">Prime. Water&rsquo;s warm-ish, flow is friendly, wetland in full green. Morning launches only.</div>
+      </div>
+      <div>
+        <div class="sn">Early &ndash; mid Aug</div>
+        <div class="sd">Still good. Lower flow, slower drift, more time to look at birds. Get off by 2 p.m.</div>
+      </div>
+      <div>
+        <div class="sn">Late Aug &ndash; Sep</div>
+        <div class="sd">Water drops, gravel bars appear, you&rsquo;ll drag in places. Cooler air, fewer people.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+
+    <div class="reviews-head">
+      <div class="review-summary">
+        <div class="big">4.7</div>
+        <div class="meta">
+          <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="count">Based on 38 reader reviews</div>
+        </div>
+      </div>
+      <a href="mailto:hello@seatoskytrails.com?subject=River%20of%20Golden%20Dreams%20review" class="leave-review">Leave a review</a>
+    </div>
+
+    <div class="review-grid">
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Jul 2025</span>
+        </div>
+        <p>&ldquo;Did RoGD with a canoe delivery and it was the move. Boat waiting at Rainbow Park, shuttle pickup at Meadow. Saw three herons and a beaver before we hit the highway bridge. Glass water until the wind came up at the takeout.&rdquo;</p>
+        <div>
+          <span class="who">Priya N.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Aug 2025</span>
+        </div>
+        <p>&ldquo;Took the SUP. The narrow corners after the Hwy 99 bridge are real &mdash; I knelt through three of them. Worth it. Green Lake takeout into the wind was the hardest part of the day.&rdquo;</p>
+        <div>
+          <span class="who">Marc T.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Jul 2025</span>
+        </div>
+        <p>&ldquo;Booked the guide because none of us had done moving water. He walked us through the bridge zone and pointed out the strainers on the corners. Watched two other groups in pool toys get into trouble. Money well spent.&rdquo;</p>
+        <div>
+          <span class="who">Hana &amp; Devon</span>
+          <span class="src">Reader letter</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;<span style="color:var(--ink-mute);">&#9733;</span></span>
+          <span class="when">Aug 2025</span>
+        </div>
+        <p>&ldquo;Beautiful paddle but we made the rookie mistake &mdash; Walmart raft, Explorer 200, the whole thing. It popped about an hour in, exactly where this site warns. Walked out wet. Came back the next week with a real canoe and finished it properly.&rdquo;</p>
+        <div>
+          <span class="who">Owen B.</span>
+          <span class="src">Reader letter</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Jul 2025</span>
+        </div>
+        <p>&ldquo;Launched at 8 a.m. Off Green Lake by 11. The morning light through the reeds is genuinely beautiful and the water was completely still. Anyone telling you to go in the afternoon hasn&rsquo;t actually done this paddle.&rdquo;</p>
+        <div>
+          <span class="who">Lila K.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Aug 2025</span>
+        </div>
+        <p>&ldquo;Pulled out at Meadow Park, kid asleep on the bow, dog asleep on the floor of the canoe, ospreys overhead. Best ninety bucks we spent in Whistler.&rdquo;</p>
+        <div>
+          <span class="who">Reuben S.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONEST NOTE ===================== -->
+<section class="honest">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">Honest Note</span>
+      <h2>What the Instagram posts leave out.</h2>
+    </div>
+    <p>RoGD looks like a still-water dream. <em>It mostly is.</em> But it&rsquo;s also moving water with logs, a bridge zone where the current picks up, and a beaver corridor that punishes anyone who shows up in a pool toy. Whistler Search &amp; Rescue gets these calls every summer, and the river itself ends up littered with shredded vinyl from rafts that didn&rsquo;t make it.</p>
+    <p>The fix is simple: a real boat, an early start, and a shuttle plan. Anything else and you&rsquo;re part of the problem the locals are tired of hauling out of the water.</p>
+    <p>The corridor sits on Sḵwx̱wú7mesh (Squamish) Nation and Lil&rsquo;wat Nation territory. Pack out what you bring. Don&rsquo;t leave a popped raft in the reeds.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
 <footer class="foot">
-  <div class="wrap inner">
-    <div>
-      <em>Sea to Sky Trails</em> &middot; Vol. I, Entry VI &middot; River of Golden Dreams &middot; Published in Sḵwx̱wú7mesh and Lil̓wat7úl territory.
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>The Guide</h4>
+        <p>The River of Golden Dreams is an entry in the Sea to Sky Trails &mdash; a slow-built field guide to the lakes, hikes, and outposts of the Coast Mountains.</p>
+      </div>
+      <div>
+        <h4>More Field Guides</h4>
+        <ul>
+          <li><a href="https://seatoskytrails.com/">Sea to Sky Trails index</a></li>
+          <li><a href="https://alicelakesquamish.com/">Alice Lake</a></li>
+          <li><a href="https://lakelovelywater.com/">Lake Lovely Water</a></li>
+          <li><a href="https://callahanlake.com/">Callaghan Lake</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get a Boat</h4>
+        <ul>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Canoe delivery</a></li>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Paddleboard delivery</a></li>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Hire a guide</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      &copy; 2026. Set in Fraunces &amp; Inter. Reader-funded.
+    <div class="foot-bottom">
+      <div><em>Sea to Sky Trails</em> &middot; Vol. I, No. 04 &middot; Published in Sḵwx̱wú7mesh &amp; Lil&rsquo;wat territory &middot; <a href="https://seatoskytrails.com/" class="underline-link">seatoskytrails.com</a></div>
+      <div>Set in Fraunces &amp; Inter. Reader-funded.</div>
     </div>
   </div>
 </footer>
