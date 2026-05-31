@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>River of Golden Dreams — A Field Guide to the Whistler Paddle</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="A clear, honest field guide to the River of Golden Dreams in Whistler, BC — Alta Lake to Green Lake. The wetland corridor, the bridge zone, the rentals, the reviews, and the small details locals know.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -445,6 +446,22 @@
   .ps-callout p { font-size: 0.97rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 0.75rem; }
   .ps-callout p:last-child { margin: 0; }
   .ps-callout em { color: var(--ink); font-style: italic; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { margin-top: 2rem; border-top: 1px solid var(--rule); }
+  details.faq-item { border-bottom: 1px solid var(--rule); }
+  details.faq-item > summary { list-style: none; cursor: pointer; outline: none; padding: 1.5rem 0; display: grid; grid-template-columns: 2rem 1fr 1.5rem; gap: 1rem; align-items: baseline; font-family: "Fraunces", serif; font-weight: 500; font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.012em; color: var(--ink); }
+  details.faq-item > summary::-webkit-details-marker { display: none; }
+  details.faq-item > summary:hover { color: var(--moss); }
+  .faq-item .q-n { font-family: "Fraunces", serif; font-style: italic; color: var(--ink-mute); font-size: 0.95rem; }
+  .faq-item .q-plus { font-family: "Inter", sans-serif; font-weight: 300; font-size: 1.5rem; color: var(--ink-mute); justify-self: end; line-height: 1; transition: transform 0.2s; }
+  details.faq-item[open] > summary .q-plus { transform: rotate(45deg); }
+  .faq-item .a { padding: 0 1.5rem 1.75rem 3rem; }
+  @media (max-width: 700px){ .faq-item .a { padding: 0 0 1.5rem 0; } }
+  .faq-item .a p { font-size: 1rem; margin: 0 0 0.9rem; color: var(--ink-soft); }
+  .faq-item .a p:last-child { margin: 0; }
+  .faq-item .a a { border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+  .faq-item .a a:hover { border-bottom-color: var(--ink); }
 </style>
 </head>
 <body>
@@ -463,6 +480,7 @@
       <a href="#water">Rentals</a>
       <a href="#season">When to go</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">Questions</a>
     </div>
   </div>
 </nav>
@@ -963,6 +981,26 @@
 </section>
 
 <!-- ===================== FOOTER ===================== -->
+<!-- ===================== FAQ ===================== -->
+<section class="deep" id="faq">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">Questions &amp; Answers</span>
+      <h2>What people ask before they paddle it.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary><span class="q-n">01</span><span class="q-t">Which direction do you paddle the River of Golden Dreams?</span><span class="q-plus">+</span></summary><div class="a"><p>Downstream, always. You start at Alta Lake (Rainbow Park), paddle the short lake crossing to the river mouth, and the current carries you north to Green Lake (Meadow Park). The channel is too narrow to turn around mid-river &mdash; it&rsquo;s a one-way trip, which is why the shuttle matters more than any rapid.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">02</span><span class="q-t">How long does it take to paddle?</span><span class="q-plus">+</span></summary><div class="a"><p>About 2 to 3 hours for the roughly 5&ndash;6 km from Rainbow Park to Meadow Park at an unhurried pace. Add time in late summer, when low water can mean scraping shallows or a short portage around exposed beaver dams.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">03</span><span class="q-t">Do I need a shuttle or two cars?</span><span class="q-plus">+</span></summary><div class="a"><p>Because it&rsquo;s one-way, yes &mdash; either run two cars, or have it handled for you. <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Squamish Canoe Rental delivers a canoe or hard paddleboard to Rainbow Park and collects it at Meadow Park</a>, so you don&rsquo;t move a boat or juggle vehicles. That&rsquo;s the option we recommend by default for first-timers.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">04</span><span class="q-t">Can I paddle it on a cheap inflatable or an Intex Explorer 200?</span><span class="q-plus">+</span></summary><div class="a"><p>Please don&rsquo;t. The River of Golden Dreams is a working beaver corridor, and the beaver-sharpened stubs left in the banks and riverbed will puncture a thin vinyl pool raft like an Intex Explorer 200 &mdash; often silently, a hundred metres before you realise. Then you&rsquo;re standing in glacier-fed water with no boat. For about the price of one disposable raft you can rent a real canoe or hard SUP that shrugs the stakes off.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">05</span><span class="q-t">Is it dangerous? Is it beginner-friendly?</span><span class="q-plus">+</span></summary><div class="a"><p>It&rsquo;s gentle, not benign. There are no rapids and the water is flat, so a first-timer in a canoe can do it &mdash; but the water is glacier-cold all summer, the current picks up under the Highway 99 bridge, and a downed tree on a tight corner is a real hazard. Wear your PFD from the launch and go through the bridge centre-channel, eyes downstream.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">06</span><span class="q-t">When is the best time of year and time of day?</span><span class="q-plus">+</span></summary><div class="a"><p>Late June through mid-August is the window &mdash; earlier and the river runs too high and cold, later and it gets bony. The biggest factor is time of day: be on the water before nine. Whistler&rsquo;s afternoon valley wind builds fast and pushes hard against the open stretch of Green Lake at the take-out.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">07</span><span class="q-t">Can I do it on a SUP or kayak instead of a canoe?</span><span class="q-plus">+</span></summary><div class="a"><p>A canoe is the classic, most forgiving choice. A hard stand-up paddleboard works for confident paddlers on a calm morning &mdash; expect to step off at least once in the tight bends. A rec kayak is fine but can drag bottom in August. An inflatable SUP is passable but still vulnerable to the same beaver stakes.</p></div></details>
+      <details class="faq-item"><summary><span class="q-n">08</span><span class="q-t">Is there a deal for Whistler locals?</span><span class="q-plus">+</span></summary><div class="a"><p>If you live up here and paddle the river more than once a season, the disposable-raft economics never made sense anyway. Ask <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Squamish Canoe Rental</a> about a flat locals&rsquo; day rate on a real board or canoe &mdash; built to undercut the cost of buying (and binning) a cheap inflatable every summer.</p><p>More paddles on the <a href="https://seatoskytrails.com/">Sea to Sky Trails</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
@@ -994,6 +1032,24 @@
     </div>
   </div>
 </footer>
+
+<!-- ===================== FAQ STRUCTURED DATA ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which direction do you paddle the River of Golden Dreams?", "acceptedAnswer": { "@type": "Answer", "text": "Downstream, always. You start at Alta Lake (Rainbow Park), paddle the short lake crossing to the river mouth, and the current carries you north to Green Lake (Meadow Park). The channel is too narrow to turn around mid-river, so it is a one-way trip and the shuttle matters more than any rapid." } },
+    { "@type": "Question", "name": "How long does it take to paddle the River of Golden Dreams?", "acceptedAnswer": { "@type": "Answer", "text": "About 2 to 3 hours for the roughly 5 to 6 km from Rainbow Park to Meadow Park at an unhurried pace. Add time in late summer, when low water can mean scraping shallows or a short portage around exposed beaver dams." } },
+    { "@type": "Question", "name": "Do I need a shuttle or two cars for the River of Golden Dreams?", "acceptedAnswer": { "@type": "Answer", "text": "Because it is one-way, yes. Either run two cars, or have it handled for you. Squamish Canoe Rental delivers a canoe or hard paddleboard to Rainbow Park and collects it at Meadow Park, so you do not move a boat or juggle vehicles. That is the recommended option for first-timers." } },
+    { "@type": "Question", "name": "Can I paddle the River of Golden Dreams on a cheap inflatable or Intex Explorer 200?", "acceptedAnswer": { "@type": "Answer", "text": "It is strongly discouraged. The river is a working beaver corridor, and beaver-sharpened stubs in the banks and riverbed will puncture a thin vinyl pool raft like an Intex Explorer 200, often silently. For about the price of one disposable raft you can rent a real canoe or hard SUP that shrugs the stakes off." } },
+    { "@type": "Question", "name": "Is the River of Golden Dreams dangerous or beginner-friendly?", "acceptedAnswer": { "@type": "Answer", "text": "It is gentle but not benign. There are no rapids and the water is flat, so a first-timer in a canoe can do it, but the water is glacier-cold all summer, the current picks up under the Highway 99 bridge, and a downed tree on a tight corner is a real hazard. Wear your PFD from the launch and go through the bridge centre-channel." } },
+    { "@type": "Question", "name": "When is the best time to paddle the River of Golden Dreams?", "acceptedAnswer": { "@type": "Answer", "text": "Late June through mid-August is the window. Earlier the river runs too high and cold, later it gets shallow. Time of day matters most: be on the water before nine, because Whistler's afternoon valley wind builds fast and pushes against the open stretch of Green Lake at the take-out." } },
+    { "@type": "Question", "name": "Can I do the River of Golden Dreams on a SUP or kayak instead of a canoe?", "acceptedAnswer": { "@type": "Answer", "text": "A canoe is the classic, most forgiving choice. A hard stand-up paddleboard works for confident paddlers on a calm morning, with at least one likely step-off in the tight bends. A rec kayak is fine but can drag bottom in August. An inflatable SUP is passable but still vulnerable to beaver stakes." } },
+    { "@type": "Question", "name": "Is there a deal for Whistler locals on the River of Golden Dreams?", "acceptedAnswer": { "@type": "Answer", "text": "Locals who paddle the river more than once a season can ask Squamish Canoe Rental about a flat locals' day rate on a real board or canoe, designed to undercut the cost of buying and binning a cheap inflatable every summer." } }
+  ]
+}
+</script>
 
 </body>
 </html>
